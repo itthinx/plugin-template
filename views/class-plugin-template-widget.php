@@ -112,7 +112,6 @@ class Plugin_Template_Widget extends WP_Widget {
 		if ( !empty( $title ) ) {
 			$output .= $before_title . $title . $after_title;
 		}
-		$instance['title'] = $instance['query_title'];
 
 		$output .= Plugin_Template_Shortcodes::plugin_template( $instance );
 		$output .= $after_widget;
@@ -182,7 +181,7 @@ class Plugin_Template_Widget extends WP_Widget {
 		echo '</p>';
 
 		// some content
-		$placeholder = isset( $instance['content'] ) ? $instance['content'] : __( 'Content', 'plugin-template' );
+		$content = isset( $instance['content'] ) ? $instance['content'] : __( 'Content', 'plugin-template' );
 		echo '<p>';
 		echo sprintf( '<label title="%s">', sprintf( __( 'Some example text field.', 'plugin-template' ) ) );
 		echo __( 'Content', 'plugin-template' );

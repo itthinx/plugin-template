@@ -60,39 +60,36 @@ class Plugin_Template_Shortcodes {
 
 		$atts = shortcode_atts(
 			array(
-				'title_tag' => 'h2',
-				'title'   => __( 'Plugin Template', 'plugin-template' ),
+				'show_settings' => 'no',
 				'content' => __(' Example content from the Plugin Template plugin.', 'plugin-template' ),
 			),
 			$atts
 		);
 
-		$atts['title_tag'] = strtolower( $atts['title_tag'] );
-		switch( $atts['title_tag'] ) {
-			case 'h1' :
-			case 'h2' :
-			case 'h3' :
-			case 'h4' :
-			case 'h5' :
-			case 'h6' :
-				break;
-			default :
-				$atts['title_tag'] = 'h1';
-		}
-		$atts['title'] = strip_tags( trim( $atts['title'] ) );
 		$atts['content'] = strip_tags( trim( $atts['content'] ) );
 
-		$output = '<div class="plugin-template">';
-		if ( !empty( $atts['title'] ) ) {
-			$output .= '<div class="plugin-template-title">';
-			$output .= sprintf( '<%s>', esc_attr( $atts['title_tag'] ) );
-			$output .= esc_html( $atts['title'] );
-			$output .= sprintf( '</%s>', esc_attr( $atts['title_tag'] ) );
-			$output .= '</div>';
-		}
+		$output = '';
+
 		if ( !empty( $atts['content'] ) ) {
 			$output .= '<div class="plugin-template-content">';
+			$output .= '<p>';
 			$output .= esc_html( $atts['content'] );
+			$output .= '</p>';
+			$output .= '</div>';
+		}
+
+		if ( strtolower( $atts['show_settings'] ) == 'yes' ) {
+			$options = Plugin_Template::get_options();
+			$enable  = isset( $options[Plugin_Template::ENABLE] ) ? $options[Plugin_Template::ENABLE] : false;
+			$text    = isset( $options[Plugin_Template::TEXT] ) ? $options[Plugin_Template::TEXT] : '';
+
+			$output .= '<div>';
+			$output .= '<p>';
+			$output .= sprintf( __( 'Enable : %s', 'plugin_template' ), $enable ? __( 'yes', 'plugin-template' ) : __( 'no', 'plugin-template' ) );
+			$output .= '</p>';
+			$output .= '<p>';
+			$output .= sprintf( __( 'Text : %s', 'plugin-template' ), esc_html( stripslashes( $text ) ) );
+			$output .= '</p>';
 			$output .= '</div>';
 		}
 
