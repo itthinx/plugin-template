@@ -92,11 +92,28 @@ class Plugin_Template_Admin {
 	 */
 	public static function admin_settings_link( $links ) {
 		if ( current_user_can( Plugin_Template::MANAGE_PLUGIN_TEMPLATE ) ) {
-			$url = self::get_admin_section_url();
-			$links[] = '<a href="' . esc_url( $url ) . '">' . __( 'Settings', 'plugin-template' ) . '</a>';
-			$links[] = '<a href="http://github.com/itthinx/plugin-template/">' . __( 'Plugin Template on GitHub', 'plugin-template' ) . '</a>';
+			$links[] = '<a href="' . esc_url( self::get_admin_section_url() ) . '">' . __( 'Info', 'plugin-template' ) . '</a>';
+			$links[] = '<a href="' . esc_url( self::get_admin_section_url( 'settings' ) ) . '">' . __( 'Settings', 'plugin-template' ) . '</a>';
+			$links[] = '<a href="http://github.com/itthinx/plugin-template/">' . __( 'GitHub', 'plugin-template' ) . '</a>';
 		}
 		return $links;
+	}
+
+	/**
+	 * Returns the admin URL for the default or given section.
+	 *
+	 * @param string $section empty string or 'settings'
+	 */
+	public static function get_admin_section_url( $section = '' ) {
+		switch( $section ) {
+			case 'settings' :
+				$page = self::MENU_SLUG_SETTINGS;
+				break;
+			default :
+				$page = self::MENU_SLUG;
+		}
+		$path = add_query_arg( array( 'page' => $page ), admin_url( 'admin.php' ) );
+		return $path;
 	}
 
 	/**
@@ -157,11 +174,17 @@ class Plugin_Template_Admin {
 	 * An additional section in the plugin's menu.
 	 * This is just an example of how you can add another item to your own menu.
 	 */
-	public static function plugin_template_settings() {
+	public static function plugin_template() {
 		echo '<div class="plugin-template">';
 		echo '<h1 class="section-heading">' . __( 'Plugin Template', 'plugin-template' ) . '</h1>';
 		echo '<p>';
-		echo __( 'Just another section.', 'plugin-template' );
+		_e( 'A template for WordPress plugins.', 'plugin-template' );
+		echo '</p>';
+		echo '<p>';
+		printf( __( 'You can find the source of this plugin in its <a href="%s">GitHub</a> repository.', 'plugin-template' ), esc_url( 'https://github.com/itthinx/plugin-template') );
+		echo '</p>';
+		echo '<p>';
+		_e( 'This is a simple example of an administrative page.', 'plugin-template' );
 		echo '</p>';
 		echo '</div>';
 	}
@@ -169,7 +192,7 @@ class Plugin_Template_Admin {
 	/**
 	 * Renders the admin section.
 	 */
-	public static function plugin_template() {
+	public static function plugin_template_settings() {
 
 		global $wpdb;
 
