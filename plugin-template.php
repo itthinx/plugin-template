@@ -2,7 +2,11 @@
 /**
  * plugin-template.php
  *
- * Copyright (c) 2016 @todo
+ * Copyright (c) 2016 www.itthinx.com
+ * 
+ * @todo The copyright notice and headers are just an example.
+ * You should adjust the copyright notice and headers in all files
+ * for your own plugin.
  * 
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
@@ -13,11 +17,13 @@
  * @since 1.0.0
  *
  * Plugin Name: Plugin Template
- * Plugin URI: http://www.itthinx.com/plugins/plugin-template/
+ * Plugin URI:  http://www.itthinx.com/plugins/plugin-template/
  * Description: A template for WordPress plugins.
- * Version: 1.0.0
- * Author: itthinx
- * Author URI: http://www.itthinx.com
+ * Version:     1.0.0
+ * Author:      itthinx
+ * Author URI:  http://www.itthinx.com
+ * License:     GPLv3
+ * License URI: https://www.gnu.org/licenses/gpl.txt
  * Text Domain: plugin-template
  * Domain Path: /languages
  */

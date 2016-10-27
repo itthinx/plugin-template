@@ -1,12 +1,12 @@
  Plugin Template                                                   LICENSE.txt
 
- Copyright 2016 @todo
+ Copyright 2016 www.itthinx.com
 
   The code and all files of "Plugin Template" are released under the GNU
   General Public License, Version 3. The following additional terms apply to
   all files as per section "7. Additional Terms." :
 
-  - @todo
+  - @todo Adjust copyright, headers, etc
 
 
                     GNU GENERAL PUBLIC LICENSE

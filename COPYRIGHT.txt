@@ -1,6 +1,8 @@
  Plugin Template                                                 COPYRIGHT.txt
  
- Copyright 2016 @todo
+ @todo Adjust all this to your needs for your own plugin ...
+ 
+ Copyright 2016 www.itthinx.com
  
  The files COPYRIGHT.txt and LICENSE.txt as well as ALL NOTICES IN THE
  HEADERS OF ALL FILES MUST BE KEPT INTACT.
