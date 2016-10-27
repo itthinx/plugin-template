@@ -40,7 +40,6 @@ class Plugin_Template_Admin {
 	 */
 	public static function admin_enqueue_scripts() {
 		wp_register_style( 'plugin-template-admin', PLUGIN_TEMPLATE_PLUGIN_URL . '/css/admin.css', array(), PLUGIN_TEMPLATE_PLUGIN_VERSION );
-		wp_register_style( 'plugin-template-admin-menu', PLUGIN_TEMPLATE_PLUGIN_URL . '/css/admin-menu.css', array(), PLUGIN_TEMPLATE_PLUGIN_VERSION );
 	}
 
 	/**
@@ -48,14 +47,6 @@ class Plugin_Template_Admin {
 	 */
 	public static function admin_print_styles() {
 		wp_enqueue_style( 'plugin-template-admin' );
-	}
-
-	/**
-	 * Enqueues our admin menu stylesheet (on all admin pages,
-	 * as it sets the icon for our menu).
-	 */
-	public static function admin_print_styles_menu() {
-		wp_enqueue_style( 'plugin-template-admin-menu' );
 	}
 
 	/**
@@ -69,7 +60,7 @@ class Plugin_Template_Admin {
 			Plugin_Template::MANAGE_PLUGIN_TEMPLATE,
 			self::MENU_SLUG,
 			array( __CLASS__, 'plugin_template' ),
-			'none', // we use our admin-menu.css to set the icon as a background image
+			'dashicons-hammer',
 			self::MENU_POSITION
 		);
 		$pages[] = add_submenu_page(
@@ -83,8 +74,6 @@ class Plugin_Template_Admin {
 		foreach( $pages as $page ) {
 			add_action( 'admin_print_styles-' . $page, array( __CLASS__, 'admin_print_styles' ) );
 		}
-		// this one is for all admin pages, sets the icon menu
-		add_action( 'admin_print_styles', array( __CLASS__, 'admin_print_styles_menu' ) );
 	}
 
 	/**
