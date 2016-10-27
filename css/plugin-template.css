@@ -5,3 +5,8 @@
 	border: 1px solid #666;
 	border-radius: 0.31em;
 }
+.blinker {
+	background-image: url( ../images/blinker.gif );
+	background-position: 4px 4px;
+	background-repeat: no-repeat;
+}

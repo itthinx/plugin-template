@@ -25,12 +25,13 @@ class Plugin_Template_Service {
 	const ORDER_BY         = 'order_by';
 	const DEFAULT_ORDER_BY = 'date';
 
-	const MAX_EXCERPT_WORDS = 10;
+	const MAX_EXCERPT_WORDS      = 10;
 	const MAX_EXCERPT_CHARACTERS = 50;
-	const ELLIPSIS = '&hellip;';
+	const ELLIPSIS               = '&hellip;';
 
-	const CACHE_LIFETIME     = 30; // seconds
+	const CACHE_LIFETIME     = 15; // seconds
 	const RESULT_CACHE_GROUP = 'ixptr';
+	const MILLISECONDS = 1000;
 
 	/**
 	 * Registers actions on wp_ajax_(action) and wp_ajax_nopriv_(action)
@@ -123,6 +124,7 @@ class Plugin_Template_Service {
 				// guard against shortcodes in comments
 				$content = str_replace( "[", "&#91;", $content );
 				$content = str_replace( "]", "&#93;", $content );
+
 				// word and character limits
 				$max_excerpt_words = apply_filters( 'plugin_template_max_excerpt_words', self::MAX_EXCERPT_WORDS );
 				$max_excerpt_characters = apply_filters( 'plugin_template_max_excerpt_characters', self::MAX_EXCERPT_CHARACTERS );
@@ -198,22 +200,6 @@ class Plugin_Template_Service {
 	}
 
 	/**
-	 * Reduces content to flat text only.
-	 *
-	 * @param string $content
-	 * @return string
-	 */
-	private static function flatten( $content ) {
-		// Add space between potential adjacent tags so the content
-		// isn't glued together after applying wp_strip_all_tags().
-		$content = str_replace( '><', '> <', $content );
-		$content = wp_strip_all_tags( $content, true );
-		$content = preg_replace('/\n+|\t+|\s+/', ' ', $content );
-		$content = trim( $content );
-		return $content;
-	}
-
-	/**
 	 * Renders the HTML to use the service.
 	 *
 	 * Enqueues required scripts and styles.
@@ -273,8 +259,7 @@ class Plugin_Template_Service {
 		$output .= '</div>'; // .plugin-template
 
 		$js_args = array();
-		$js_args[] = sprintf( 'no_results:"%s"', esc_js( apply_filters( 'plugin_template_no_results', __( 'No results', 'plugin-template' ) ) ) );
-		$js_args[] = sprintf( 'interval:%d',intval( self::CACHE_LIFETIME ) );
+		$js_args[] = sprintf( 'no_results:"%s"', esc_js( apply_filters( 'plugin_template_no_results', __( 'There are no comments to show yet.', 'plugin-template' ) ) ) );
 		$js_args = '{' . implode( ',', $js_args ) . '}';
 
 		$post_target_url = add_query_arg( $url_params , admin_url( 'admin-ajax.php' ) );
@@ -289,7 +274,7 @@ class Plugin_Template_Service {
 			$post_target_url,
 			$js_args
 		);
-		$output .= sprintf( 'setTimeout(ixPluginTemplateCycle,%d);', self::CACHE_LIFETIME * 1000 );
+		$output .= sprintf( 'setTimeout(ixPluginTemplateCycle,%d);', self::CACHE_LIFETIME * self::MILLISECONDS );
 		$output .= '};';
 		$output .= 'ixPluginTemplateCycle();';
 		$output .= '});'; // ready

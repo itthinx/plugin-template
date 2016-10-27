@@ -25,17 +25,11 @@ var ixPluginTemplate = {
  * POST the result query and display the results.
  * 
  * The args parameter object allows to indicate:
- * - blinkerTimeout : to modify the default blinker timeout in milliseconds or 0 to disable it
- * - lang : language code
  * - no_results : alternative text to show when no results are obtained
- * - show_description : whether to render descriptions
- * - thumbnails : whether to render thumbnails
  * 
- * @param fieldId
- * @param containerId
- * @param resultsId
- * @param url
- * @param query
+ * @param string containerId
+ * @param string resultsId
+ * @param string url
  * @param object args
  */
 ixPluginTemplate.getResults = function( containerId, resultsId, url, args ) {

@@ -75,12 +75,14 @@ class Plugin_Template_Shortcodes {
 			$output .= '<p>';
 			$output .= sprintf( __( 'Enable : %s', 'plugin_template' ), $enable ? __( 'yes', 'plugin-template' ) : __( 'no', 'plugin-template' ) );
 			$output .= '</p>';
-			$output .= '<p>';
-			$output .= sprintf( __( 'Text : %s', 'plugin-template' ), esc_html( stripslashes( $text ) ) );
-			$output .= '</p>';
+			if ( !empty( $text ) ) {
+				$output .= '<p>';
+				$output .= esc_html( stripslashes( $text ) );
+				$output .= '</p>';
+			}
 			$output .= '</div>';
 		}
-		
+
 		if ( $enable ) {
 			$output .= Plugin_Template_Service::render();
 		}
