@@ -146,7 +146,9 @@ class Plugin_Template {
 	public static function wp_enqueue_scripts() {
 		wp_register_script(
 			'plugin-template',
-			defined( 'PLUGIN_TEMPLATE_DEBUG' ) && PLUGIN_TEMPLATE_DEBUG ? PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.js' : PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.min.js',
+			defined( 'PLUGIN_TEMPLATE_DEBUG' ) && PLUGIN_TEMPLATE_DEBUG ?
+				PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.js' :
+				PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.min.js',
 			array( 'jquery' ),
 			PLUGIN_TEMPLATE_PLUGIN_VERSION,
 			true
