@@ -76,6 +76,7 @@ class Plugin_Template {
 		//register_uninstall_hook( PLUGIN_TEMPLATE_FILE, array( __CLASS__, 'uninstall' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
 		add_action( 'init', array( __CLASS__, 'wp_init' ) );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ) );
 		require_once PLUGIN_TEMPLATE_CORE_LIB . '/class-plugin-template-service.php';
 		require_once PLUGIN_TEMPLATE_VIEWS_LIB . '/class-plugin-template-shortcodes.php';
 		require_once PLUGIN_TEMPLATE_VIEWS_LIB . '/class-plugin-template-widget.php';
@@ -141,6 +142,20 @@ class Plugin_Template {
 				echo $msg;
 			}
 		}
+	}
+
+	/**
+	 * Register or enqueues scripts and styles.
+	 * 
+	 * Although the name of the hook suggests this is for scripts, it is used
+	 * to register styles as well.
+	 * 
+	 * Don't just enqueue your scripts and styles on all pages, rather register
+	 * them here and enqueue them where needed.
+	 */
+	public static function wp_enqueue_scripts() {
+		wp_register_script( 'plugin-template', defined( 'PLUGIN_TEMPLATE_DEBUG' ) && PLUGIN_TEMPLATE_DEBUG ? PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.js' : PLUGIN_TEMPLATE_PLUGIN_URL . '/js/plugin-template.min.js', array( 'jquery' ), PLUGIN_TEMPLATE_PLUGIN_VERSION, true );
+		wp_register_style( 'plugin-template', PLUGIN_TEMPLATE_PLUGIN_URL . '/css/plugin-template.css', array(), PLUGIN_TEMPLATE_PLUGIN_VERSION );
 	}
 
 	/**

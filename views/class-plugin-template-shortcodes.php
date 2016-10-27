@@ -39,8 +39,6 @@ class Plugin_Template_Shortcodes {
 	 * Enqueues scripts and styles.
 	 */
 	public static function load_resources() {
-		$options = Plugin_Template::get_options();
-		$enable = isset( $options[Plugin_Template::ENABLE] ) ? $options[Plugin_Template::ENABLE] : false;
 		wp_enqueue_script( 'plugin-template' );
 		wp_enqueue_style( 'plugin-template' );
 	}
@@ -68,6 +66,10 @@ class Plugin_Template_Shortcodes {
 
 		$atts['content'] = strip_tags( trim( $atts['content'] ) );
 
+		$options = Plugin_Template::get_options();
+		$enable  = isset( $options[Plugin_Template::ENABLE] ) ? $options[Plugin_Template::ENABLE] : false;
+		$text    = isset( $options[Plugin_Template::TEXT] ) ? $options[Plugin_Template::TEXT] : '';
+
 		$output = '';
 
 		if ( !empty( $atts['content'] ) ) {
@@ -79,10 +81,6 @@ class Plugin_Template_Shortcodes {
 		}
 
 		if ( strtolower( $atts['show_settings'] ) == 'yes' ) {
-			$options = Plugin_Template::get_options();
-			$enable  = isset( $options[Plugin_Template::ENABLE] ) ? $options[Plugin_Template::ENABLE] : false;
-			$text    = isset( $options[Plugin_Template::TEXT] ) ? $options[Plugin_Template::TEXT] : '';
-
 			$output .= '<div>';
 			$output .= '<p>';
 			$output .= sprintf( __( 'Enable : %s', 'plugin_template' ), $enable ? __( 'yes', 'plugin-template' ) : __( 'no', 'plugin-template' ) );
@@ -91,6 +89,17 @@ class Plugin_Template_Shortcodes {
 			$output .= sprintf( __( 'Text : %s', 'plugin-template' ), esc_html( stripslashes( $text ) ) );
 			$output .= '</p>';
 			$output .= '</div>';
+		}
+		
+		if ( $enable ) {
+			$output .= Plugin_Template_Service::render();
+		}
+
+		if ( !empty( $output ) ) {
+			$output =
+				'<div class="plugin-template">' .
+				$output .
+				'</div>';
 		}
 
 		return $output;

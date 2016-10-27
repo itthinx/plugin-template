@@ -1,1 +1,7 @@
-@CHARSET "UTF-8";
+/* we're keeping it ugly on purpose for the sake of our example */
+.plugin-template {
+	font-family: monospace;
+	padding: 1em;
+	border: 1px solid #666;
+	border-radius: 0.31em;
+}
