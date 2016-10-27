@@ -62,7 +62,7 @@ class Plugin_Template {
 	 */
 	public static function init() {
 		register_activation_hook( PLUGIN_TEMPLATE_FILE, array( __CLASS__, 'activate' ) );
-		//register_deactivation_hook( PLUGIN_TEMPLATE_FILE, array( __CLASS__, 'deactivate' ) );
+		register_deactivation_hook( PLUGIN_TEMPLATE_FILE, array( __CLASS__, 'deactivate' ) );
 		//register_uninstall_hook( PLUGIN_TEMPLATE_FILE, array( __CLASS__, 'uninstall' ) );
 		add_action( 'admin_notices', array( __CLASS__, 'admin_notices' ) );
 		add_action( 'init', array( __CLASS__, 'wp_init' ) );
@@ -108,7 +108,7 @@ class Plugin_Template {
 	/**
 	 * Deactivate plugin action.
 	 * 
-	 * Currently not used.
+	 * Currently not doing anything.
 	 * 
 	 * @param boolean $network_wide
 	 */
