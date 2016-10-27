@@ -1,1 +1,6 @@
-@CHARSET "UTF-8";
+.plugin-template {
+	margin: 0 0.62em 0.62em 0.62em;
+	padding: 1em;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}

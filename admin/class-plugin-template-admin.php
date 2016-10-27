@@ -24,7 +24,8 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Settings.
+ * Settings. Creates the plugin's dashboard menu and renders the sections used
+ * to control the plugin's settings.
  */
 class Plugin_Template_Admin {
 
@@ -173,8 +174,16 @@ class Plugin_Template_Admin {
 		}
 	}
 
+	/**
+	 * An additional section in the plugin's menu.
+	 */
 	public static function plugin_template_settings() {
+		echo '<div class="plugin-template">';
+		echo '<h1 class="section-heading">' . __( 'Plugin Template', 'plugin-template' ) . '</h1>';
+		echo '<p>';
 		echo __( 'Just another section.', 'plugin-template' );
+		echo '</p>';
+		echo '</div>';
 	}
 
 	/**

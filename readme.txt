@@ -11,33 +11,68 @@ A template for WordPress plugins.
 
 == Description ==
 
-@todo description of the plugin ...
+@todo Add a detailed description of your plugin here.
+
+You will find these resources useful:
+
+- The [readme.txt validator](https://wordpress.org/plugins/about/validator/)
+  which you can use to check the contents of your readme.txt
+- An [example readme.txt](https://wordpress.org/plugins/about/readme.txt) with
+  details on each section.
+- The [About](https://wordpress.org/plugins/about/) section of the Plugin
+  Directory with guidelines.
+- The [Add Your Plugin](https://wordpress.org/plugins/add/) page where you can
+  submit your request to host your plugin on wordpress.org.
 
 == Installation ==
 
-@todo installation instructions ...
+@todo Add some useful installation instructions.
 
 == Frequently Asked Questions ==
 
 = Where is the repository? =
 
-Please go to the [Plugin Template](https://github.com/itthinx/plugin-template/) page.
+You will find the repository of this plugin at the
+[Plugin Template](https://github.com/itthinx/plugin-template/) page.
+
+= What else? =
+
+@todo Add some useful questions and answers about your plugin here.
 
 == Screenshots ==
 
-@todo
+Add your screenshots to the `assets` folder of your plugin's repository on
+wordpress.org. Screenshots should be named `screenshot-1.png`, `screenshot-2.png`, ...
+and descriptions added in order:
+
 1. First screenshot's description
 2. Second screenshot's description
-...
+3. ...
 
 == Changelog ==
 
+* @todo Add details on changes for each version.
+
+For large changelogs, you should only leave the most recent entries here and
+maintain the full changelog in the plugin's changelog.txt - let people know where
+they can find it, for example like this:
+
+* The complete changelog can be found in the
+  [changelog.txt](https://github.com/itthinx/plugin-template/blob/master/changelog.txt)
+
 = 1.0.0 =
 
-* Initial release.
+* Initial public release.
+* Fixed this ...
+* Added that ...
+* Tweaked such and such ...
+* Improved those things ...
 
-The complete changelog can be found in [changelog.txt](https://github.com/itthinx/plugin-template/blob/master/changelog.txt)
+= 0.9.0 =
+
+* An example entry of a ficticious earlier release.
 
 == Upgrade Notice ==
 
-This is the first release.
+@todo Add a brief note on what's changed since the last release. People like
+to know what happened to decide whether they should upgrade or not.
