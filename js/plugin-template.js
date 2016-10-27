@@ -10,8 +10,7 @@
 
 /**
  * Parameter object.
- * doPost is used to flag if the query can be posted. It is false
- * if we are going somewhere else using document.location.
+ * doPost can be used to flag if the query can be posted, e.g. set it to false when we're leaving using document.location
  */
 var ixPluginTemplate = {
 	doPost : true, 
@@ -61,22 +60,18 @@ ixPluginTemplate.getResults = function( containerId, resultsId, url, args ) {
 				if ( ( data !== null ) && ( data.length > 0 ) ) {
 					var result_type = null,
 						current_type = null;
-					
-					// Search results table start.
-					results += '<table class="search-results">';
+					// Comment results table
+					results += '<table class="plugin-template-results">';
 					for( var key in data ) {
-
 						results += '<tr class="entry">';
-
 						results += '<td class="result-info">';
 						results += '<a href="' + data[key].url + '" title="' + data[key].content + '">';
-						results += '<span class="title">' + data[key].content + '</span>';
+						results += data[key].content;
 						results += '</a>';
 						results += '</td>';
 						results += '</tr>';
 					}
 					results += '</table>';
-					// Search results table end.
 				} else {
 					if ( typeof args.no_results !== "undefined" ) {
 						if ( args.no_results.length > 0 ) {
