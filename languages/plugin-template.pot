@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: PACKAGE VERSION\n"
+        "Report-Msgid-Bugs-To: \n"
+        "POT-Creation-Date: 2016-10-27 15:33+0200\n"
+        "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+        "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+        "Language-Team: LANGUAGE <LL@li.org>\n"
+        "Language: \n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=CHARSET\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: views/class-plugin-template-shortcodes.php:52
+msgid   " Example content from the Plugin Template plugin."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:181
+msgid   "A template for WordPress plugins."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:160
+#: admin/class-plugin-template-admin.php:200
+msgid   "Access denied."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:221
+msgid   "An example setting ..."
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:174
+#: views/class-plugin-template-widget.php:177
+msgid   "Content"
+msgstr  ""
+
+#: views/class-plugin-template-shortcodes.php:76
+#, php-format
+msgid   "Enable : %s"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:217
+msgid   "Enable it?"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:232
+msgid   "Example text setting ..."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:97
+#: admin/class-plugin-template-admin.php:133
+msgid   "GitHub"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:95
+msgid   "Info"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:135
+msgid   "Please refer to the <a href=\"http://github.com/itthinx/plugin-"
+        "template/\">Plugin Template</a> repository for this plugin."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:129
+#: admin/class-plugin-template-admin.php:132
+#: admin/class-plugin-template-admin.php:179
+#: admin/class-plugin-template-admin.php:211
+#: views/class-plugin-template-widget.php:44
+msgid   "Plugin Template"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:239
+msgid   "Save"
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:68
+#: admin/class-plugin-template-admin.php:69
+#: admin/class-plugin-template-admin.php:96
+msgid   "Settings"
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:169
+msgid   "Show Settings?"
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:176
+msgid   "Some example text field."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:226
+msgid   "Text"
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:62
+msgid   "The Plugin Template Widget"
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:153
+msgid   "The widget title."
+msgstr  ""
+
+#: core/class-plugin-template-service.php:262
+msgid   "There are no comments to show yet."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:187
+msgid   "This is a simple example of an administrative page."
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:154
+msgid   "Title"
+msgstr  ""
+
+#: views/class-plugin-template-widget.php:161
+msgid   "Whether to show the plugin settings in the widget."
+msgstr  ""
+
+#: admin/class-plugin-template-admin.php:184
+#, php-format
+msgid   "You can find the source of this plugin in its <a href=\"%s\">GitHub</"
+        "a> repository."
+msgstr  ""
+
+#: views/class-plugin-template-shortcodes.php:76
+msgid   "no"
+msgstr  ""
+
+#: views/class-plugin-template-shortcodes.php:76
+msgid   "yes"
+msgstr  ""
