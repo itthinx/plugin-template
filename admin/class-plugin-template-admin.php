@@ -155,6 +155,7 @@ class Plugin_Template_Admin {
 
 	/**
 	 * An additional section in the plugin's menu.
+	 * This is just an example of how you can add another item to your own menu.
 	 */
 	public static function plugin_template_settings() {
 		echo '<div class="plugin-template">';
