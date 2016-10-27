@@ -232,9 +232,6 @@ class Plugin_Template_Admin {
 		_e( 'Example text setting ...', 'plugin-template');
 		echo '</p>';
 
-		global $hide_save_button;
-		$hide_save_button = true;
-
 		wp_nonce_field( 'set', self::NONCE );
 		echo '<input type="hidden" name="action" value="plugin-template-save-settings" />';
 
