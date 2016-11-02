@@ -19,7 +19,8 @@ You will find these resources useful:
   which you can use to check the contents of your readme.txt
 - An [example readme.txt](https://wordpress.org/plugins/about/readme.txt) with
   details on each section.
-- The [Detailed Plugin Guidelines](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/), a must read if you plan on releasing your plugin through [WordPress.org](https://wordpress.org).
+- The [Detailed Plugin Guidelines](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/),
+  a must read if you plan on releasing your plugin through [WordPress.org](https://wordpress.org).
 - The [About](https://wordpress.org/plugins/about/) section of the Plugin
   Directory with guidelines.
 - The [Add Your Plugin](https://wordpress.org/plugins/add/) page where you can
